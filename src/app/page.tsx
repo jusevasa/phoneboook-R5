@@ -66,7 +66,7 @@ const Page = () => {
               <CardPhone phone={phone} key={phone.id} />
             ))}
             {isEmptyPhones() && (
-              <p className='text-neutral-700 font-light text-center underline'>
+              <p className='text-neutral-700 font-light text-center underline md:col-span-5'>
                 Is empty, please create a contact.
               </p>
             )}
