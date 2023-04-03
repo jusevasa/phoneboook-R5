@@ -32,7 +32,7 @@ export const PhoneBookProvider: React.FC<IPhoneBookProvider> = ({
     const item = localStorage.getItem(KEY_PHONE_LOCAL_STORAGE);
     const phones = JSON.parse(item as string);
 
-    if (phones.length > 0) {
+    if (phones && phones.length > 0) {
       setPhones(phones);
     }
   }, []);
