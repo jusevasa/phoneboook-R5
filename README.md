@@ -1,38 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Prueba R5
 
-## Getting Started
+Bienvenidos a mi prueba, la verdad he disfrutado mucho realizando esta prueba. Desde mi perspectiva se pudieron mejorar bastantes cosas sin embargo, me enfoque mucho en el entregable y los criterios de aceptación.
 
-First, run the development server:
+Para resolver esta prueba hice uso de las siguientes herramientas:
+
+- Nextjs (Framework de react)
+- Tailwind (Framework CSS)
+- Cypress
+- UUID
+- eslint
+- react-hot-toast
+
+## Ejecutar la aplicación 
+
+Para poder correr la aplicación es necesario instalar depencias
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+yarn install
+#or
+yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Despues se debe ejecutar el entorno local de desarrollo con el siguiente comando:
+```bash
+yarn dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para la ejecucion de pruebas automatizadas:
+```bash
+yarn cypress
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## ¿Comó desarrolle la prueba?
+Lo primero fue visualizar comenzar a segmentar cada uno de los puntos que iba a tener este phone book y que acciones iba a tener.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+adicionalmente, he realizado un E2E test basicos para comprobar los flujos completos de la aplicacion.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## ¿Puntos de mejora?
+Hubo muchas cosas que me hubiese gustado implementar y mejorar, unos test unitarios y algunos de integracion. Aunque este cubriendo gran parte con las pruebas automatizadas no obstante queda demas agregar estos test que agregar valor al codigo.
 
-To learn more about Next.js, take a look at the following resources:
+Hubiese sido interesante poder correr analizis de codigo estatico con sonarQube.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

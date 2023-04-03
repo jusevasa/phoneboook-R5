@@ -1,12 +1,12 @@
 "use client";
+import { useRouter } from "next/navigation";
+import { ChangeEvent, useState } from "react";
 
 import { Button } from "@/components/Button";
 import { CardPhone } from "@/components/CardPhone";
 import { SearchInput } from "@/components/SearchInput";
 import { usePhone } from "@/context/phoneBook.context";
 import { IPhone } from "@/models/types";
-import { useRouter } from "next/navigation";
-import { ChangeEvent, useState } from "react";
 
 const Page = () => {
   const { phones } = usePhone();

@@ -1,5 +1,6 @@
-import { SearchIcon } from "@/icons";
 import { ChangeEventHandler } from "react";
+
+import { SearchIcon } from "@/icons";
 import { Input } from "./Input";
 
 interface ISearchInput {

@@ -2,6 +2,8 @@
 
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Head from "next/head";
+import { toast } from "react-hot-toast";
 
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
@@ -47,8 +49,10 @@ const Page: React.FC<IPage> = ({ params }) => {
     if (isValidForm()) {
       if (params.id) {
         updatePhone(params.id, phone);
+        toast.success("Contact updated successfully");
       } else {
         savePhone(phone);
+        toast.success("New contact created successfully");
       }
       router.push("/");
     }
@@ -61,34 +65,39 @@ const Page: React.FC<IPage> = ({ params }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='flex flex-col gap-4 w-full'>
-      <Input
-        placeholder='First name'
-        onChange={handleChange}
-        value={phone.firstName}
-        name='firstName'
-      />
-      <Input
-        placeholder='Last name'
-        onChange={handleChange}
-        value={phone.lastName}
-        name='lastName'
-      />
-      <Input
-        placeholder='Number'
-        onChange={handleChange}
-        value={phone.number?.toString()}
-        name='number'
-        type='number'
-      />
-      <Button
-        onClick={() => {}}
-        className='rounded-2xl'
-        disabled={!isValidForm()}
+    <>
+      <form
+        onSubmit={handleSubmit}
+        className='flex flex-col gap-4 w-full md:w-3/6'
       >
-        Save
-      </Button>
-    </form>
+        <Input
+          placeholder='First name'
+          onChange={handleChange}
+          value={phone.firstName}
+          name='firstName'
+        />
+        <Input
+          placeholder='Last name'
+          onChange={handleChange}
+          value={phone.lastName}
+          name='lastName'
+        />
+        <Input
+          placeholder='Number'
+          onChange={handleChange}
+          value={phone.number?.toString()}
+          name='number'
+          type='number'
+        />
+        <Button
+          onClick={() => {}}
+          className='rounded-2xl'
+          disabled={!isValidForm()}
+        >
+          Save
+        </Button>
+      </form>
+    </>
   );
 };
 

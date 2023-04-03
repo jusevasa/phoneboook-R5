@@ -1,8 +1,10 @@
-import { IPhone } from "@/models/types";
-import { Button } from "./Button";
-import { useRouter } from "next/navigation";
-import { usePhone } from "@/context/phoneBook.context";
 import { MouseEvent } from "react";
+import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
+
+import { Button } from "./Button";
+import { IPhone } from "@/models/types";
+import { usePhone } from "@/context/phoneBook.context";
 
 interface ICardPhone {
   phone: IPhone;
@@ -34,6 +36,7 @@ export const CardPhone: React.FC<ICardPhone> = ({ phone }) => {
             const confirmation = window.confirm("Are you sure?");
             if (confirmation) {
               deletePhone(id);
+              toast.success("Contact deleted successfully");
             }
           }}
           className='bg-red-600 font-medium hover:bg-red-800 hover:text-red-200 md:w-fit'
